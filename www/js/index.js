@@ -103,6 +103,23 @@ function onPhotoDataSuccess(imageData) {
 	hideLoading();
 }
 function onPhotoDataSuccessFd(imageData) {
+	function playAudio(url) {
+    // Play the audio file at url
+    var my_media = new Media(url,
+        // success callback
+        function() {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function(err) {
+            console.log("playAudio():Audio Error: "+err);
+    });
+
+    // Play audio
+    my_media.play();
+	
+}
+	playAudio("beep.wav");
 	var smallImage = document.getElementById('np-fd-image');
 	$width = $(window).width();
 	$width = parseInt($width*0.9);
