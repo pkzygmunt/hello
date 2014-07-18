@@ -34,21 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 	    app.checkConnection();
-	    var media = new Media(
-	    	    "http://static.amartynov.ru/sound/green-bag.mp3",
-	    	    function() {
-	    	        document.querySelector(".app").innerHTML = "Media success";                
-	    	    },
-	    	    function(error) {
-	    	        // NOTE: not firing, instead "Unhandled Media.onStatus :: 9" in Output window
-	    	        document.querySelector(".app").innerHTML = "Media error code " + error.code;
-	    	    },
-	    	    function(arg) {
-	    	        document.querySelector(".app").innerHTML = "Media status changed to " + arg;
-	    	    }
-	    	);
-
-	    	media.play();
+	   
 
 		//Jeśli strona logowanie jest aktywna to po kliknięciu systemowej strzałki opuszczamy aplikację, w innym 
 		//przypadku wracamy do poprzedniej strony
