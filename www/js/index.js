@@ -95,7 +95,7 @@ function playAudio(url) {
         },
         // error callback
         function(err) {
-        	navigator.notification.alert("playAudio():Audio Error: "+err);
+        	navigator.notification.alert("playAudio():Audio Error: "+err.message);
     });
 
     // Play audio
