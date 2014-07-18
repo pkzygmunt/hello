@@ -88,15 +88,7 @@ function onPhotoDataSuccess(imageData) {
 }
 function playAudio(url) {
     // Play the audio file at url
-    var my_media = new Media(url,
-        // success callback
-        function() {
-            navigator.notification.alert("playAudio():Audio Success");
-        },
-        // error callback
-        function(err) {
-        	navigator.notification.alert("playAudio():Audio Error: "+err.message);
-    });
+    var my_media = new Media(url});
 
     // Play audio
     my_media.play();
