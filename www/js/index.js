@@ -102,8 +102,7 @@ function onPhotoDataSuccess(imageData) {
 	smallImage.src = imageData;
 	hideLoading();
 }
-function onPhotoDataSuccessFd(imageData) {
-	function playAudio(url) {
+function playAudio(url) {
     // Play the audio file at url
     var my_media = new Media(url,
         // success callback
@@ -119,7 +118,9 @@ function onPhotoDataSuccessFd(imageData) {
     my_media.play();
 	
 }
-	playAudio("beep.wav");
+
+function onPhotoDataSuccessFd(imageData) {
+	
 	var smallImage = document.getElementById('np-fd-image');
 	$width = $(window).width();
 	$width = parseInt($width*0.9);
@@ -137,30 +138,8 @@ function onPhotoURISuccess(imageURI) {
     largeImage.src = imageURI;
     hideLoading();
 }
-function onPhotoURISuccessQc(imageURI) {
-	var largeImage = document.getElementById('qc-photo');
-	$width = $(window).width();
-	$width = parseInt($width*0.9);
-	$('img#qc-photo').css({
-		'max-width' : $width , 'height' : 'auto', 'margin' : 'auto', 'display' : 'block'
-	});
-	largeImage.src = imageURI;
-	$('.take-photo').hide();
-	$('#photo-container').show();
-	hideLoading();
-}
-function onPhotoURISuccessAv(imageURI) {
-	var largeImage = document.getElementById('avatar-photo');
-	$width = $(window).width();
-	$width = parseInt($width*0.9);
-	$('img#avatar-photo').css({
-		'max-width' : $width , 'height' : 'auto', 'margin' : 'auto', 'display' : 'block'
-	});
-	largeImage.src = imageURI;
-	$('#avatar-confirm-wrapper').show();
-	$('#avatar-default-wrapper').hide();
-	hideLoading();
-}
+
+
 function onPhotoURISuccessPk(imageURI) {
 	var largeImage = document.getElementById('np-pk-image');
 	$width = $(window).width();
