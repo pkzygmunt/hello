@@ -34,7 +34,21 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 	    app.checkConnection();
-		showLoading("");
+	    var media = new Media(
+	    	    "http://static.amartynov.ru/sound/green-bag.mp3",
+	    	    function() {
+	    	        document.querySelector(".app").innerHTML = "Media success";                
+	    	    },
+	    	    function(error) {
+	    	        // NOTE: not firing, instead "Unhandled Media.onStatus :: 9" in Output window
+	    	        document.querySelector(".app").innerHTML = "Media error code " + error.code;
+	    	    },
+	    	    function(arg) {
+	    	        document.querySelector(".app").innerHTML = "Media status changed to " + arg;
+	    	    }
+	    	);
+
+	    	media.play();
 
 		//Jeśli strona logowanie jest aktywna to po kliknięciu systemowej strzałki opuszczamy aplikację, w innym 
 		//przypadku wracamy do poprzedniej strony
@@ -64,26 +78,10 @@ var app = {
 	}
 };
 
-$("#goFarther").on("click",function(){
-	var type = $(this).attr("data-notify");
-	var postId = $(this).attr("data-post");
-	if(type==1){
-		jQuery.getPostsById(window.localStorage.getItem("authtoken"),window.localStorage.getItem("id"),parseInt(postId),'#refundacja-post-page');
-	}
-	if(type==2){
-		jQuery.showMessage(window.localStorage.getItem("authtoken"),window.localStorage.getItem("id"),parseInt(postId));
-	}
-	if(type==3){
-		jQuery.getPostsById(window.localStorage.getItem("authtoken"),window.localStorage.getItem("id"),parseInt(postId),'#refundacja-post-page');
-	}
-	if(type==5){
-		jQuery.getPostsById(window.localStorage.getItem("authtoken"),window.localStorage.getItem("id"),parseInt(postId),'#refundacja-post-page');
-	}
-	$("#pushNotifyPopup").hide();
-});
+
 
 function capturePhoto(onSuccess) {
-	showLoading("");
+
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
     	}
@@ -93,7 +91,7 @@ function capturePhoto(onSuccess) {
 function onFail(message) {
     //alert('Failed because: ' + message);
 	notify("Anulowano","Info");
-	hideLoading();
+
 }
 
 function onPhotoDataSuccess(imageData) {
@@ -107,11 +105,11 @@ function playAudio(url) {
     var my_media = new Media(url,
         // success callback
         function() {
-            console.log("playAudio():Audio Success");
+            navigator.notification.alert("playAudio():Audio Success");
         },
         // error callback
         function(err) {
-            console.log("playAudio():Audio Error: "+err);
+        	navigator.notification.alert("playAudio():Audio Error: "+err);
     });
 
     // Play audio
@@ -179,28 +177,6 @@ function hideLoading(){
 	$.mobile.loading("hide");
 }
 
-function onError(data){
-	var api_key = "5bb101b76cb834b382a86b9c1a22a392";
-	
-	navigator.notification.vibrate(500);
-	hideLoading();
-    navigator.notification.alert(
-		(data.err==2) ? data.msg : 'Wystąpił błąd...',
-		null,
-		'Błąd',
-		'OK'
-	);	
-    var params = new Object();
-    params.error = data;   
-    $.ajax({
-        url: "https://konsylium24.pl/mobileapi/report_error?&api_key=" + api_key,
-        cache: false,
-        dataType: "json",
-		async: true,
-		crossDomain: true, 
-		data: params,
-    });
-}
 
 function notify(message,title){
     navigator.notification.alert(
@@ -242,23 +218,3 @@ function showConfirm(question,callback) {
     );
 }
 
-$( function() {
-	jQuery.extend( {
-		getSpecializationSelect: function(){
-			$.ajax({
-				url: 'file:///android_asset/www/data/specializations.json',
-				cache: true,
-				dataType: "json",
-				async: true,
-				crossDomain: true,    
-				success: function(data){	
-					$.each(data, function(key, val) {
-						$('select.specialization').append($(document.createElement('li')).html('<option value="'+key+'">'+val+'</option>'))
-					});
-					$('select.specialization option').first().attr("selected","selected");
-				},
-				error: onError,
-			});
-		}
-	});
-});
