@@ -1,7 +1,7 @@
 function loadContent(){
 		
 		$(".toLoad").show("slow");
-		console.log("chuj");
+		navigator.notification.alert("chuj");
 	}
 $(function(){
 	
