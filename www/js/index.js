@@ -181,11 +181,6 @@ function showLoading(message){
 }
 
 
-function win(r) {
-	//console.log("Code = " + r.responseCode);
-	//console.log("Response = " + r.response);
-	//console.log("Sent = " + r.bytesSent);
-}
 
 function fail(error) {
 	notify("Wystąpił błąd. Spróbuj ponownie. Jeżeli problem będzie się powtarzał skontaktuj się z administratorem.","Błąd");
