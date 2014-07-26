@@ -4,8 +4,9 @@ html {height: 100%;}
 body {background:#fff !important;}
 
 
-.header { text-align:center; background:#000; }
-.header > img { margin:15px 0; }
-.page .content { text-align:center; }
+.header { text-align:center; background:#ccc; }
+.header > img { margin:15px 0; border-radius:10px; -webkit-border-radius:10px; box-shadow: 2px 4px 65px 6px #000; }
+.page .content { text-align:center; background:#fff; }
 .page .content img,.page .content p { display:block; text-align:center; margin:15px auto; }
 .toLoad { display:none; }
+div[data-role=page]{ background:#fff; }

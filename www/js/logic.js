@@ -15,7 +15,8 @@ function loadContent(){
 $(function(){
 	
 	
-	
-	setTimeout("loadContent()",3000);
+	if($("#startPage").hasClass("ui-page-active")){
+		setTimeout("loadContent()",3000);
+	}
 	
 });
