@@ -80,12 +80,7 @@ function onFail(message) {
 
 }
 
-function onPhotoDataSuccess(imageData) {
-    var smallImage = document.getElementById('send-msg-image');
-    smallImage.style.display = 'block';
-	smallImage.src = imageData;
-	hideLoading();
-}
+
 function playAudio(url) {
     // Play the audio file at url
     var my_media = new Media(url,
@@ -103,7 +98,7 @@ function playAudio(url) {
 	
 }
 
-function onPhotoDataSuccessFd(imageData) {
+function onPhotoDataSuccess(imageData) {
 	
 	var smallImage = document.getElementById('np-fd-image');
 	$width = $(window).width();
@@ -112,7 +107,9 @@ function onPhotoDataSuccessFd(imageData) {
 		'max-width' : $width , 'height' : 'auto', 'margin' : 'auto', 'display' : 'block'
 	});
 	smallImage.src = imageData;
+	$("#scanBtt").fadeIn();
 	hideLoading();
+	
 }
 
 function onPhotoURISuccess(imageURI) {
@@ -137,7 +134,7 @@ function onPhotoURISuccessPk(imageURI) {
 function onPhotoURISuccessFd(imageURI) {
 	var largeImage = document.getElementById('np-fd-image');
 	$width = $(window).width();
-	$width = parseInt($width*0.9);
+	$width = parseInt($width*0.5);
 	$('img#np-fd-image').css({
 		'max-width' : $width , 'height' : 'auto', 'margin' : 'auto', 'display' : 'block'
 	});
@@ -176,7 +173,7 @@ function showLoading(message){
     $.mobile.loading("show",{
     	text: message,
         textVisible: true,
-        theme: "b"
+        theme: ""
     });
 }
 

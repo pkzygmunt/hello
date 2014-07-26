@@ -30,27 +30,30 @@
 			</div>
 		</div>
 	</div>
-
 	<div data-role="page" class="header" id="interface">
 		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
 			<img src="css/images/logo.png" alt="Wielki Marsz logo" />
 		</div>
 		<div data-role="content" class="content">
 			<div id="makePhoto">
-					<img  id="np-fd-image" src="" />
-					<a data-theme="a" data-role="button" onclick="capturePhoto(onPhotoDataSuccessFd); return false;">Zrób zdjęcie</a>
+				<div class="hit-container">
+					<div class="hit-scan"></div>
+					<img  id="np-fd-image" src="" alt="photo"/>
+				</div>
+					<a data-theme="a" data-role="button" href="#" id="scanBtt" onclick="scanPhoto(); return false;">Skanuj</a>
+					<a data-theme="a" data-role="button" onclick="capturePhoto(onPhotoDataSuccess); return false;">Zrób zdjęcie</a>
+			</div>				
+		</div>
+	</div>
+	<div data-role="page" class="header" id="interface-hit">
+		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<img src="css/images/logo.png" alt="Wielki Marsz logo" />
+		</div>
+		<div data-role="content" class="content">
+			<div>
     				<a data-theme="a" data-role="button" onclick="playAudio('www/rurkowiec.wav'); return false;">rurkowiec</a>
 			</div>				
 		</div>
 	</div>
-
-		
-
-    
-	
-		
-        <script type="text/javascript">
-           
-        </script>
     </body>
 </html>

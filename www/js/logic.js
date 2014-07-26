@@ -1,4 +1,4 @@
-
+var imgH;
 function change(){
 	$.mobile.changePage("#interface", { transition: "slide"});
 }
@@ -11,6 +11,24 @@ function loadContent(){
 		
 		
 	}
+
+function scanning(){
+	
+	$(".hit-scan").animate({
+		"top" : imgH
+	},{duration:4000,complete:function(){
+		$(".hit-scan").animate({
+			"top" : 0
+		},{duration:4000});
+		
+	}
+	});
+}
+function scanPhoto(){
+	imgH = $(".hit-container").height();
+	$(".hit-scan").fadeIn();
+	scanning();
+}
 
 $(function(){
 	
