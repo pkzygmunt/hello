@@ -6,10 +6,11 @@
 		<title>Konsylium24</title>
 		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.0-rc.1.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery/jquery-1.9.1.min.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.0-rc.1.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+		
 		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/logic.js"></script>
     </head>
@@ -30,21 +31,16 @@
 		</div>
 	</div>
 
-	<div data-role="page" class="header" id="add-post-page-1" style="display:none;">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
-			<div class="ui-btn-left">
-				<a data-rel="back" data-direction="reverse" data-role="button" data-icon="back"  data-theme="c" data-inline="true" data-display="push" data-dismissible="true"></a>
-			</div>
-			<h3>Nowy Post</h3>
-      <a class="ui-btn-right" href="#" onclick="$('#menupanel').panel('open');"  data-role="button" data-icon="bars" data-iconpos="notext" data-theme="c" data-inline="true" data-display="push" data-dismissible="true"></a>
+	<div data-role="page" class="header" id="interface">
+		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<img src="css/images/logo.png" alt="Wielki Marsz logo" />
 		</div>
-		<div data-role="content">	
+		<div data-role="content" class="content">
 			<div id="makePhoto">
-
 					<img  id="np-fd-image" src="" />
 					<a data-theme="a" data-role="button" onclick="capturePhoto(onPhotoDataSuccessFd); return false;">Zrób zdjęcie</a>
     				<a data-theme="a" data-role="button" onclick="playAudio('www/rurkowiec.wav'); return false;">rurkowiec</a>
-			</div>
+			</div>				
 		</div>
 	</div>
 

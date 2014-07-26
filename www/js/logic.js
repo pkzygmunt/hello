@@ -1,12 +1,21 @@
+
+function change(){
+	$.mobile.changePage("#interface", { transition: "slide"});
+}
+
 function loadContent(){
+		showLoading("");
+		$(".toLoad").fadeIn("slow",function(){
+			setTimeout("change()",3000);
+		})
 		
-		$(".toLoad").show("slow");
-		navigator.notification.alert("chuj");
+		
 	}
+
 $(function(){
 	
 	
 	
-	setTimeout("loadContent",3000);
+	setTimeout("loadContent()",3000);
 	
 });

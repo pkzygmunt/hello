@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
 	    app.checkConnection();
 	   
-
+	    $.mobile.changePage("#startPage", { transition: "slide"});
 		//Jeśli strona logowanie jest aktywna to po kliknięciu systemowej strzałki opuszczamy aplikację, w innym 
 		//przypadku wracamy do poprzedniej strony
 		
