@@ -18,6 +18,7 @@ div[data-role=page]{ background:#fff; }
 	width: 100%;
 	opacity: 0.4;
 	display:none;
+	height:10px;
 }
 .hit-container { position:relative; }
 #scanBtt { display:none; }
