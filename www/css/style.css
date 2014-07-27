@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 html {height: 100%;}
-body {background:#fff !important;}
+body {background:#fff !important; font-family:Arial !important;}
 
 
 .header { text-align:center; background:#ccc; }
@@ -10,9 +10,10 @@ body {background:#fff !important;}
 .page .content img,.page .content p { display:block; text-align:center; margin:15px auto; }
 .toLoad { display:none; }
 div[data-role=page]{ background:#fff; }
+a[data-role=button] { background:#d83627 !important; color:#fff !important; text-shadow:0 !important; border:none !important;  font-weight:300 !important; font-size:14px !important; }
 
 .hit-scan {
-	background: #009900 url(images/ico.png) no-repeat;
+	background: #e7e7e7 url(images/ico.png) no-repeat center;
 	position: absolute;
 	height: 100%;
 	width: 50%;
