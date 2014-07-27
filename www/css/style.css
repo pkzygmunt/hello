@@ -12,14 +12,15 @@ body {background:#fff !important;}
 div[data-role=page]{ background:#fff; }
 
 .hit-scan {
-	background: #009900;
+	background: #009900 url(images/ico.png) no-repeat;
 	position: absolute;
 	height: 100%;
 	width: 50%;
 	opacity: 0.4;
 	display:none;
-	height:10px;
+	height:40px;
 	left:25%;
 }
 .hit-container { position:relative; }
 #scanBtt { display:none; }
+#interface-hit .desc { font-size:21px; background:#cccccc; padding:5px; white-space:normal; word-wrap:break-word;}

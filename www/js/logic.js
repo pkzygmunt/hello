@@ -49,7 +49,7 @@ function loadContent(){
 function scanning(){
 	
 	$(".hit-scan").animate({
-		"top" : imgH-10
+		"top" : imgH-40
 	},{duration:1000,complete:function(){
 		$(".hit-scan").animate({
 			"top" : 0
@@ -58,6 +58,7 @@ function scanning(){
 			$("#to-hit").attr("src",src);
 			var rand = Math.floor((Math.random() * 28) + 1); 
 			$("#interface-hit .desc").html(levels[0][rand]);
+			$("#lv-int").html("Poziom lewactwa :<b>"+rand+"</b>");
 			$.mobile.changePage("#interface-hit", { transition: "slide"});
 			
 		}
