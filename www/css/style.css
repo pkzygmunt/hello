@@ -25,3 +25,4 @@ a[data-role=button] { background:#d83627 !important; color:#fff !important; text
 .hit-container { position:relative; }
 #scanBtt { display:none; }
 #interface-hit .desc { font-size:21px; background:#cccccc; padding:5px; white-space:normal; word-wrap:break-word;}
+#interface-hit .desc { margin-bottom:20px; }
