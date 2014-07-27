@@ -57,7 +57,7 @@ function scanning(){
 			var src = $("#np-fd-image").attr("src");
 			$("#to-hit").attr("src",src);
 			var rand = Math.floor((Math.random() * 28) + 1); 
-			$("#interface-hit .desc").html(levels[0][rand]);
+			$("#interface-hit .desc .txt").html(levels[0][rand]);
 			$("#lv-int").html("Poziom lewactwa :<b>"+rand+"</b>");
 			$.mobile.changePage("#interface-hit", { transition: "slide"});
 			
@@ -66,6 +66,11 @@ function scanning(){
 		
 	}
 	});
+}
+function refreshText(){
+	var rand = Math.floor((Math.random() * 28) + 1); 
+	$("#interface-hit .desc .txt").html(levels[0][rand]);
+	
 }
 function scanPhoto(){
 	$("#scanBtt").hide();

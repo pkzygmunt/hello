@@ -26,3 +26,4 @@ a[data-role=button] { background:#d83627 !important; color:#fff !important; text
 #scanBtt { display:none; }
 #interface-hit .desc { font-size:21px; background:#cccccc; padding:5px; white-space:normal; word-wrap:break-word;}
 #interface-hit .desc { margin-bottom:20px; }
+#interface-hit .desc a { background: url(images/ref.png) no-repeat center;  height:26px; width:26px; display:block;}
